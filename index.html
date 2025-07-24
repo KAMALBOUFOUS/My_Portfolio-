@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>MY PORTFOLIO</title>
+  
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+	<header>
+<nav>
+	<ul>
+		<li><a class="About" id="About" href=#About>About</a></li>
+		<li><a id="Projects" href=#Projects>Projects</a></li>
+		<li><a id="Contact" href=#Contact>Contact</a></li>
+	</ul>
+</nav>
+	</header>
+	<p class="MYPORTFOLIO">MY PORTFOLIO</p>
+	<section id="About">
+		<p class="myname">KAMAL BOUFOUS</p>
+		<div>
+		<a href="https://www.linkedin.com/in/kamal-boufous?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" target="_blank">
+			<section class="link">
+		<img class="linked" src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/81/LinkedIn_icon.svg/2048px-LinkedIn_icon.svg.png"></a>
+		<p class="linketext">LinkedIn</p>
+		</section>
+		</div>
+		<div class="instadiv">
+		<section class="instag">
+			<a href="https://www.instagram.com/kamalbou2006?igsh=YzljYTk1ODg3Zg==" target="_blank">
+			<img class="insta" src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a5/Instagram_icon.png/2048px-Instagram_icon.png"</a>
+			<p class="instatext">Instagram</p>
+			</section>
+			</div>
+		<p class="developer">Developer and Content Creator</p>
+		<p class="ability">I'm showing my abilities, Projects here</p>
+		<h1>Hello, My name is kamal boufous I have extensive experience in programming and web development, along with the ability to design and develop video games at a professional level. I'm also well-versed in all aspects of digital technology and computer-related fields, including advanced video editing and graphic design using tools like Photoshop. I work passionately in the design field, combining creativity with technical skills to deliver high-quality, outstanding results.</h1>
+		<section class="sectionR"><img class="sectionimg" src="https://cdn-icons-png.flaticon.com/512/953/953060.png">
+		</img>
+		</section>
+		<section class="sectionR"><img class="sectionimg" src="https://www.freeiconspng.com/thumbs/website-icon/website-icon-11.png"></img>
+		</section>
+		<section class="sectionR"><img class="sectionimg" src="https://cdn-icons-png.flaticon.com/512/4330/4330504.png"></img></section>
+		<section class="sectionR"><img class="sectionimg" src="https://cdn-icons-png.flaticon.com/512/3211/3211366.png"></img></section>
+		<img class="sectionL" src="https://fontawesome.com/images/icons/features/feature-whiteboard.png">
+	</section>
+	<section class="Projects" id="Projects">
+		<h1>MY PROJECTS</h1>
+		<div class="project-tile">
+			<h3>MY PORTFOLIO</h3>
+		</div>
+	</section>
+	<section class="ContactMe" id="Contact">
+		<h2 class="textcontact">Contact Me!</h2>
+		<form>
+			<div>
+			<input type="email" name="email" placeholder="YOUR EMAIL" id="email" required>
+			</div>
+			<img class="contactimg" src="https://static.vecteezy.com/system/resources/thumbnails/041/641/741/small_2x/3d-social-media-platform-online-social-communication-applications-concept-social-network-icons-trendy-design-for-social-media-advertising-png.png">
+			<div>
+			<input id="name" type="name" name="name" placeholder="YOUR NAME" required>
+			</div>
+			<div>
+			<textarea id="message" name="text" placeholder="TEXT"></textarea>
+			</div>
+			<button onclick="register()" type="submit" name="submit">SUBMIT</button>
+		</form>
+	</section>
+		</section>
+		</div>
+		<footer class="scopyright">
+		<p class=Copyright id=Copyright>©2025 ALL RIGHTS RESERVED</p>
+		</footer>
+</body>
+<script>
+function register() {
+  const name = document.getElementById("name").value.trim();
+  const email = document.getElementById("email").value.trim();
+  const message = document.getElementById("message").value.trim();
+
+  if (!name || !email || !message) {
+    return alert("Please fill in all fields.");
+  }
+
+  const users = JSON.parse(localStorage.getItem("users")) || [];
+
+  users.push({
+    name,
+    email,
+    message,
+    date: new Date().toLocaleString()
+  });
+
+  localStorage.setItem("users", JSON.stringify(users));
+
+  alert("Message sent!");
+  document.getElementB

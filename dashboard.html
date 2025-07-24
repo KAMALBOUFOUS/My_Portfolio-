@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>DASHBOARD</title>
+</head>
+<style>
+body {
+	background-color: #123;
+	color: #fff;
+  font-family: Arial, Helvetica, sans-serif;
+}
+	.dashboard {
+    padding: 15px;
+    margin: 20px 0;
+    box-sizing: border-box;
+    display: none;
+    border-radius: 10px;
+	}
+button[type="submit"] {
+    background-color: #128;
+    border-radius: 6px;
+    width: 70%;
+    border: 2px solid #888;
+    font-size: 15px;
+    padding: 10px;
+    color: #fff;
+    display: block;
+    margin: 12px auto;
+}
+.DASHBOARD1 {
+  background: #888;
+  padding: 20px solid;
+  border-radius: 10px;
+  margin: 0 auto;
+  text-align: center;
+}
+#user-list li {
+  margin-bottom: 38px;
+}
+.u-message {
+  color: black;
+  border: 5px solid rgb(132, 131, 131);
+  background-color: rgba(220, 220, 220, 0.952);
+  font-weight: 200;
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  margin-bottom: 200px;
+  padding: 10px;
+  border-radius: 6px;
+}
+.u-email {
+  color: white;
+  border: 5px solid rgb(132, 131, 131);
+  background-color: rgba(1, 122, 43, 0.76);
+  font-weight: 200;
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  margin-bottom: 200px;
+  padding: 10px;
+  border-radius: 6px;
+}
+.u-name {
+  color: white;
+  border: 5px solid rgb(132, 131, 131);
+  background-color: rgba(14, 93, 241, 0.76);
+  font-weight: 200;
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  margin-bottom: 200px;
+  padding: 10px;
+  border-radius: 6px;
+}
+.u-date {
+  color: black;
+  border: 5px solid rgb(132, 131, 131);
+  background-color: orange;
+  font-weight: 350;
+  font-family: Arial, Helvetica, sans-serif;
+  margin-bottom: 300;
+  padding: 10px;
+  border-radius: 6px;
+}
+.user-count {
+  color: whitesmoke;
+  border: 3px solid rgb(132, 131, 131);
+  background-color: #089;
+  font-weight: 350;
+  font-family: Arial, Helvetica, sans-serif;
+  margin-bottom: 300;
+  padding: 10px;
+  border-radius: 6px;
+}
+.user-messages {
+  text-align: center;
+  font-weight: 900;
+  font-size: 20px;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+</style>
+<body>
+  <section>
+  <h2 class="DASHBOARD1">DASHBOARD</h2>
+  </section>
+  	<div id="dashboard" class="dashboard">
+  	    <p class="user-count" style="background: rgb(1, 156, 212); padding: 10px; border-radius: 8px;">USER :<span id="count">0</span></p>
+  	    <div id="user-box" style="background: #000; padding: 10px; border-radius: 8px;">
+  	      <div><h3 class="user-messages" style="font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; 
+            font-weight: 1000; text-shadow: 0 0 15px #fff; margin-bottom: 50px; font-size: 20px;">USER MESSAGES</h3></div>
+  		<div><ul id="user-list"></ul></div>
+  		</div>
+	</section>
+  <section>
+    <canvas id="visitChart" width="400" height="200"></canvas>
+    <canvas id="messagesChart" width="400" height="200"></canvas>
+  </section>
+	<section>
+		<div class="Profile">
+		<section class="add-project" style="border: 2px solid #888; width: 40%; margin: 20px; padding: 12px; border-radius: 8px;">
+			<h3>ADD NEW PROJECT</h3>
+			<form>
+<input type="text" placeholder="PROJECT'S NAME" style=" background-color: #fff; border-radius: 6px; width: 80%; border: 2px solid #888; 
+font-size: 15px; padding: 10px; display: block; margin: 5px auto;" required>
+				<input type="url" placeholder="PROJECT'S URL" style="background-color: #fff;
+        border-radius: 6px; width: 80%; border: 2px solid #888;
+        font-size: 15px; padding: 10px;
+        display: block; margin: 5px auto;">
+				<input type="file" placeholder="IMAGE" accept="image/*" style="background-color: #fff;
+        border-radius: 6px; width: 80%; border: 2px solid #888;
+        font-size: 15px; padding: 10px;
+        display: block; margin: 5px auto;">
+				<button type="submit">SUBMIT</button>
+			</form>
+		</section>
+		<section class="edit-profile" style="border: 2px solid #888; width: 40%; margin: 20px; padding: 12px; border-radius: 8px;">
+		<h3>EDIT PROFILE</h3>
+		<form>
+			<input type="email" placeholder="EMAIL" style="background-color: #fff;
+      border-radius: 6px; width: 80%; border: 2px solid #888;
+      font-size: 15px; padding: 10px;
+      display: block; margin: 5px auto;">
+<input type="text" placeholder="NAME" style="background-color: #fff;
+border-radius: 6px; width: 80%; border: 2px solid #888;
+font-size: 15px; padding: 10px;
+display: block; margin: 5px auto;">
+<textarea placeholder="YOUR BIO" style="background-color: #fff;
+border-radius: 6px; width: 80%; border: 2px solid #888;
+font-size: 15px; padding: 10px;
+display: block; margin: 5px auto;"></textarea>
+<button type="submit">EDIT</button>
+</form>
+</section>
+</section>
+</div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+</body>
+
+<script>
+
+</script>
+
+<script>
+  const pass = prompt("ENTER PASSWORD");
+  if (pass === "My portfolio 35785241596") {
+    document.getElementById("dashboard").style.display = "block";
+
+    const users = JSON.parse(localStorage.getItem("users")) || [];
+    document.getElementById("count").textContent = users.length;
+
+    const list = document.getElementById("user-list");
+    list.innerHTML = "";
+
+    users.forEach(u => {
+      const li = document.createElement("li"); 
+      li.innerHTML = `<strong class="u-name">${u.name}</strong> <strong class="u-email">${u.email}</strong> <strong class="u-message">${u.message || ''}</strong> <em class="u-date">${u.date}</em>`;
+      list.appendChild(li);
+    });
+  } else {
+    alert("WRONG PASSWORD");
+  }
+</script>
+</html>
